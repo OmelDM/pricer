@@ -8,6 +8,13 @@
 
 #import "PRCProduct.h"
 
+@interface PRCProduct ()
+
+@property (nonatomic, strong) NSMutableDictionary *URLs;
+@property (nonatomic, strong) NSMutableDictionary *prices;
+
+@end
+
 @implementation PRCProduct
 
 - (instancetype)init
@@ -16,7 +23,8 @@
 	
 	if (nil != self)
 	{
-		_ID = @"528324";
+		self.URLs = [NSMutableDictionary new];
+		self.prices = [NSMutableDictionary new];
 	}
 	
 	return self;
@@ -24,13 +32,22 @@
 
 - (NSURL *)URLOnSite:(NSString *)aSite
 {
-
-	return [NSURL URLWithString:@"http://reima.in.ua/katalog/item/shapka-shlem-rejma-starrie-528324-6510"];
+	return [self.URLs objectForKey:aSite];
 }
 
-- (NSString *)priceOnSite:(NSString *)aSite
+- (NSNumber *)priceOnSite:(NSString *)aSite
 {
-	return @"864";
+	return [self.prices objectForKey:aSite];
+}
+
+- (void)setURL:(NSURL *)anURL forSite:(NSString *)aSite
+{
+	[self.URLs setObject:anURL forKey:aSite];
+}
+
+- (void)setPrice:(NSNumber *)aPrice forSite:(NSString *)aSite
+{
+	[self.prices setObject:aPrice forKey:aSite];
 }
 
 @end

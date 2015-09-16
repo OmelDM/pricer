@@ -9,6 +9,14 @@
 #import "PRCProductManager.h"
 #import "PRCProduct.h"
 
+@interface PRCProductManager ()
+
+@property (nonatomic, strong) NSMutableDictionary *shopsOrder;
+@property (nonatomic, assign) BOOL firstLineParsed;
+@property (nonatomic, strong) PRCProduct *currentProduct;
+
+@end
+
 @implementation PRCProductManager
 
 #pragma mark -
@@ -43,7 +51,7 @@
 {
 	CHCSVParser *theParser = [[CHCSVParser alloc]
 				initWithContentsOfCSVURL:[NSURL
-				URLWithString:self.inputCSVFilePath]];
+				fileURLWithPath:self.inputCSVFilePath isDirectory:NO]];
 	theParser.delegate = self;
 	theParser.trimsWhitespace = YES;
 	[theParser parse];
@@ -81,24 +89,66 @@
 	self.products = [NSMutableArray new];
 }
 
+- (void)parserDidEndDocument:(CHCSVParser *)aParser
+{
+
+}
+
 - (void)parser:(CHCSVParser *)aParser didBeginLine:(NSUInteger)aRecordNumber
 {
-	// parse first line
+	if (1 == aRecordNumber)
+	{
+		self.firstLineParsed = NO;
+		self.shopsOrder = [NSMutableDictionary new];
+	}
+	else
+	{
+		self.currentProduct = [PRCProduct new];
+	}
 }
 
 - (void)parser:(CHCSVParser *)aParser didEndLine:(NSUInteger)aRecordNumber
 {
-
+	if (1 == aRecordNumber)
+	{
+		self.firstLineParsed = YES;
+	}
+	else
+	{
+		[self.products addObject:self.currentProduct];
+	}
 }
 
 - (void)parser:(CHCSVParser *)aParser didReadField:(NSString *)aField atIndex:(NSInteger)aFieldIndex
 {
-
+	if (!self.firstLineParsed)
+	{
+		[self.shopsOrder setObject:aField forKey:[NSNumber numberWithInteger:aFieldIndex]];
+	}
+	else if (0 == aFieldIndex)
+	{
+		self.currentProduct.ID = aField;
+	}
+	else
+	{
+		NSString *theShop = [self.shopsOrder objectForKey:[NSNumber numberWithInteger:aFieldIndex]];
+		NSURL *theURL = [NSURL URLWithString:aField];
+		
+		if (nil == theURL)
+		{
+			NSLog(@"Parse error: empty URL for shop %@ [%ld]", theShop,
+						(long)aFieldIndex);
+		}
+		else
+		{
+			[self.currentProduct setURL:theURL forSite:theShop];
+		}
+	}
 }
 
 - (void)parser:(CHCSVParser *)aParser didFailWithError:(NSError *)anError
 {
-	NSLog(@"Parse error: %@", [anError localizedDescription]);
+	NSLog(@"Parse fail with error: %@", [anError localizedDescription]);
 }
 
 

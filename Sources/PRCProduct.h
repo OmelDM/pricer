@@ -8,9 +8,12 @@
 
 @interface PRCProduct : NSObject
 
-@property (readonly) NSString *ID;
+@property (nonatomic, strong) NSString *ID;
 
 - (NSURL *)URLOnSite:(NSString *)aSite;
-- (NSString *)priceOnSite:(NSString *)aSite;
+- (NSNumber *)priceOnSite:(NSString *)aSite;
+
+- (void)setURL:(NSURL *)anURL forSite:(NSString *)aSite;
+- (void)setPrice:(NSNumber *)aPrice forSite:(NSString *)aSite;
 
 @end
