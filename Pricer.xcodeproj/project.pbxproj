@@ -11,7 +11,7 @@
 		1A51C0A719E3029700A7041C /* RozetkaGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C0A619E3029700A7041C /* RozetkaGrabber.m */; };
 		1A51C0D419E3056700A7041C /* ReimaGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C0D319E3056700A7041C /* ReimaGrabber.m */; };
 		1A51C0D719E3059E00A7041C /* CoolkidsGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C0D619E3059E00A7041C /* CoolkidsGrabber.m */; };
-		1A51C0EA19E305F700A7041C /* GrabberFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C0E919E305F700A7041C /* GrabberFactory.m */; };
+		1A51C0EA19E305F700A7041C /* PRCGrabberFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C0E919E305F700A7041C /* PRCGrabberFactory.m */; };
 		1A5991EB1BA83B690044BA3A /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5991EA1BA83B690044BA3A /* CHCSVParser.m */; };
 		1A5991EE1BA849690044BA3A /* PRCProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5991ED1BA849690044BA3A /* PRCProduct.m */; };
 		1A8019E919E492B3007941CA /* Untitled.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1A8019E819E492B3007941CA /* Untitled.icns */; };
@@ -37,8 +37,8 @@
 		1A51C0D319E3056700A7041C /* ReimaGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReimaGrabber.m; path = Sources/Grabbers/ReimaGrabber.m; sourceTree = "<group>"; };
 		1A51C0D519E3059E00A7041C /* CoolkidsGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoolkidsGrabber.h; path = Sources/Grabbers/CoolkidsGrabber.h; sourceTree = "<group>"; };
 		1A51C0D619E3059E00A7041C /* CoolkidsGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoolkidsGrabber.m; path = Sources/Grabbers/CoolkidsGrabber.m; sourceTree = "<group>"; };
-		1A51C0E819E305F700A7041C /* GrabberFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrabberFactory.h; path = Sources/Grabbers/GrabberFactory.h; sourceTree = "<group>"; };
-		1A51C0E919E305F700A7041C /* GrabberFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrabberFactory.m; path = Sources/Grabbers/GrabberFactory.m; sourceTree = "<group>"; };
+		1A51C0E819E305F700A7041C /* PRCGrabberFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRCGrabberFactory.h; path = Sources/Grabbers/PRCGrabberFactory.h; sourceTree = "<group>"; };
+		1A51C0E919E305F700A7041C /* PRCGrabberFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRCGrabberFactory.m; path = Sources/Grabbers/PRCGrabberFactory.m; sourceTree = "<group>"; };
 		1A5991E91BA83B690044BA3A /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHCSVParser.h; path = Sources/CHCSVParser/CHCSVParser.h; sourceTree = "<group>"; };
 		1A5991EA1BA83B690044BA3A /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHCSVParser.m; path = Sources/CHCSVParser/CHCSVParser.m; sourceTree = "<group>"; };
 		1A5991EC1BA849690044BA3A /* PRCProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRCProduct.h; path = Sources/PRCProduct.h; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		1A5991E71BA836380044BA3A /* Grabbers */ = {
 			isa = PBXGroup;
 			children = (
-				1A51C0E819E305F700A7041C /* GrabberFactory.h */,
-				1A51C0E919E305F700A7041C /* GrabberFactory.m */,
+				1A51C0E819E305F700A7041C /* PRCGrabberFactory.h */,
+				1A51C0E919E305F700A7041C /* PRCGrabberFactory.m */,
 				1A51C0A219E3023000A7041C /* Grabber.h */,
 				1A51C0A319E3023000A7041C /* Grabber.m */,
 				1A51C0A519E3029700A7041C /* RozetkaGrabber.h */,
@@ -236,7 +236,7 @@
 				1A51C0D419E3056700A7041C /* ReimaGrabber.m in Sources */,
 				1A51C0D719E3059E00A7041C /* CoolkidsGrabber.m in Sources */,
 				1A5991EE1BA849690044BA3A /* PRCProduct.m in Sources */,
-				1A51C0EA19E305F700A7041C /* GrabberFactory.m in Sources */,
+				1A51C0EA19E305F700A7041C /* PRCGrabberFactory.m in Sources */,
 				1A5991EB1BA83B690044BA3A /* CHCSVParser.m in Sources */,
 				1AB3B2971A0BB92300A0EC4F /* ZimamaGrabber.m in Sources */,
 			);

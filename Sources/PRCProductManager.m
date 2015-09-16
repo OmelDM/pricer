@@ -9,7 +9,7 @@
 #import "PRCProductManager.h"
 #import "PRCProduct.h"
 #import "Grabber.h"
-#import "GrabberFactory.h"
+#import "PRCGrabberFactory.h"
 
 @interface PRCProductManager ()
 
@@ -73,7 +73,7 @@
 		for (NSString *theShop in self.orderedShops)
 		{
 			NSURL *theURL = [theProduct URLOnSite:theShop];
-			Grabber *theGrabber = [GrabberFactory grabberForURL:theURL];
+			Grabber *theGrabber = [PRCGrabberFactory grabberForURL:theURL];
 			NSError *theError = nil;
 			NSNumber *thePrice = [theGrabber priceFromURL:theURL
 						error:&theError];

@@ -8,14 +8,7 @@
 
 #import "PricerAppDelegate.h"
 #import "PRCProductManager.h"
-
 #import <dispatch/dispatch.h>
-
-NSString *const kNameColumnIdentifier = @"nameColumn";
-NSString *const kRozetksColumnIdentifier = @"rozetkaColumn";
-NSString *const kCoolkidsColumnIdentifier = @"coolkidsColumn";
-NSString *const kReimaColumnIdentifier = @"reimaColumn";
-NSString *const kZimamaColumnIdentifier = @"zimamaColumn";
 
 @interface PricerAppDelegate()
 

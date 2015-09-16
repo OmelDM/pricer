@@ -6,7 +6,7 @@
 //  Copyright 2014 __MyCompanyName__. All rights reserved.
 //
 
-#import "GrabberFactory.h"
+#import "PRCGrabberFactory.h"
 
 #import "Grabber.h"
 #import "RozetkaGrabber.h"
@@ -14,7 +14,7 @@
 #import "CoolkidsGrabber.h"
 #import "ZimamaGrabber.h"
 
-@implementation GrabberFactory
+@implementation PRCGrabberFactory
 
 + (Grabber *)grabberForURL:(NSURL *)aURL
 {

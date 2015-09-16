@@ -8,7 +8,7 @@
 
 @class Grabber;
 
-@interface GrabberFactory : NSObject
+@interface PRCGrabberFactory : NSObject
 
 + (Grabber *)grabberForURL:(NSURL *)aURL;
 
