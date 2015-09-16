@@ -25,6 +25,7 @@ NSString *const kZimamaColumnIdentifier = @"zimamaColumn";
 @property (nonatomic, weak) IBOutlet NSView *generalView;
 @property (nonatomic, weak) IBOutlet NSView *progressView;
 @property (nonatomic, weak) IBOutlet NSProgressIndicator *progressIndicator;
+@property (nonatomic, weak) IBOutlet NSButton *startButton;
 
 - (IBAction)startAction:(id)aSender;
 
@@ -55,7 +56,6 @@ NSString *const kZimamaColumnIdentifier = @"zimamaColumn";
 				[self stopProgressAnimation];
 			});
 		});
-		
 	}
 }
 
@@ -66,6 +66,13 @@ NSString *const kZimamaColumnIdentifier = @"zimamaColumn";
 {
 	[self.progressView setHidden:YES];
 	[self.generalView setHidden:NO];
+	[self updateUI];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+				selector:@selector(textFieldDidChange:)
+				name:NSControlTextDidChangeNotification object:self.inTextField];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+				selector:@selector(textFieldDidChange:)
+				name:NSControlTextDidChangeNotification object:self.outTextField];
 }
 
 #pragma mark -
@@ -76,8 +83,31 @@ NSString *const kZimamaColumnIdentifier = @"zimamaColumn";
 	return YES;
 }
 
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark -
 #pragma mark Private methods
+
+- (void)updateUI
+{
+	[self updateStartButton];
+}
+
+- (void)updateStartButton
+{
+	if (0 == [[self.inTextField stringValue] length] ||
+				0 == [[self.outTextField stringValue] length])
+	{
+		[self.startButton setEnabled:NO];
+	}
+	else
+	{
+		[self.startButton setEnabled:YES];
+	}
+}
 
 - (void)startProgressAnimation
 {
@@ -91,6 +121,11 @@ NSString *const kZimamaColumnIdentifier = @"zimamaColumn";
 	[self.generalView setHidden:NO];
 	[self.progressView setHidden:YES];
 	[self.progressIndicator stopAnimation:self];
+}
+
+- (void)textFieldDidChange:(NSNotification *)aNotification
+{
+	[self updateStartButton];
 }
 
 @end
