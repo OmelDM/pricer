@@ -1,12 +1,12 @@
 //
-//  Grabber.h
+//  PRCGrabber.h
 //  Pricer
 //
 //  Created by Dmytro Omelchuk on 10/6/14.
 //  Copyright 2014 __MyCompanyName__. All rights reserved.
 //
 
-@interface Grabber : NSObject
+@interface PRCGrabber : NSObject
 
 + (instancetype)sharedGrabber;
 

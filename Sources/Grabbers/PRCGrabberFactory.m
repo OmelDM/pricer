@@ -1,5 +1,5 @@
 //
-//  GrabberFactory.m
+//  PRCGrabberFactory.m
 //  Pricer
 //
 //  Created by Dmytro Omelchuk on 10/6/14.
@@ -8,35 +8,35 @@
 
 #import "PRCGrabberFactory.h"
 
-#import "Grabber.h"
-#import "RozetkaGrabber.h"
-#import "ReimaGrabber.h"
-#import "CoolkidsGrabber.h"
-#import "ZimamaGrabber.h"
+#import "PRCGrabber.h"
+#import "PRCRozetkaGrabber.h"
+#import "PRCReimaGrabber.h"
+#import "PRCCoolkidsGrabber.h"
+#import "PRCZimamaGrabber.h"
 
 @implementation PRCGrabberFactory
 
-+ (Grabber *)grabberForURL:(NSURL *)aURL
++ (PRCGrabber *)grabberForURL:(NSURL *)aURL
 {
 	NSString *theHost = [aURL host];
-	Grabber *theResult = nil;
+	PRCGrabber *theResult = nil;
 	
 	if ([theHost isEqualToString:@"rozetka.ua"] || [theHost
 				isEqualToString:@"rozetka.com.ua"])
 	{
-		theResult = [RozetkaGrabber sharedGrabber];
+		theResult = [PRCRozetkaGrabber sharedGrabber];
 	}
 	else if ([theHost isEqualToString:@"reima.in.ua"])
 	{
-		theResult = [ReimaGrabber sharedGrabber];
+		theResult = [PRCReimaGrabber sharedGrabber];
 	}
 	else if ([theHost isEqualToString:@"coolkids.com.ua"])
 	{
-		theResult = [CoolkidsGrabber sharedGrabber];
+		theResult = [PRCCoolkidsGrabber sharedGrabber];
 	}
 	else if ([theHost isEqualToString:@"zimama.com.ua"])
 	{
-		theResult = [ZimamaGrabber sharedGrabber];
+		theResult = [PRCZimamaGrabber sharedGrabber];
 	}
 	
 	return theResult;

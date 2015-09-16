@@ -1,28 +1,28 @@
 //
-//  RozetkaGrabber.m
+//  PRCRozetkaGrabber.m
 //  Pricer
 //
 //  Created by Dmytro Omelchuk on 10/6/14.
 //  Copyright 2014 __MyCompanyName__. All rights reserved.
 //
 
-#import "RozetkaGrabber.h"
+#import "PRCRozetkaGrabber.h"
 
-@interface RozetkaGrabber ()
+@interface PRCRozetkaGrabber ()
 
 
 @end
 
-@implementation RozetkaGrabber
+@implementation PRCRozetkaGrabber
 
 + (instancetype)sharedGrabber
 {
-	static RozetkaGrabber *sSharedGrabber = nil;
+	static PRCRozetkaGrabber *sSharedGrabber = nil;
     static dispatch_once_t sOnceToken;
 	
     dispatch_once(&sOnceToken,
 	^{
-        sSharedGrabber = [[RozetkaGrabber alloc] init];
+        sSharedGrabber = [[PRCRozetkaGrabber alloc] init];
     });
 	
 	return sSharedGrabber;

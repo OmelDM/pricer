@@ -1,23 +1,23 @@
 //
-//  CoolkidsGrabber.m
+//  PRCCoolkidsGrabber.m
 //  Pricer
 //
 //  Created by Dmytro Omelchuk on 10/6/14.
 //  Copyright 2014 __MyCompanyName__. All rights reserved.
 //
 
-#import "CoolkidsGrabber.h"
+#import "PRCCoolkidsGrabber.h"
 
-@implementation CoolkidsGrabber
+@implementation PRCCoolkidsGrabber
 
 + (instancetype)sharedGrabber
 {
-	static CoolkidsGrabber *sSharedGrabber = nil;
+	static PRCCoolkidsGrabber *sSharedGrabber = nil;
     static dispatch_once_t sOnceToken;
 	
     dispatch_once(&sOnceToken,
 	^{
-        sSharedGrabber = [[CoolkidsGrabber alloc] init];
+        sSharedGrabber = [[PRCCoolkidsGrabber alloc] init];
     });
 	
 	return sSharedGrabber;

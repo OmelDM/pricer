@@ -1,24 +1,24 @@
 //
-//  ZimamaGrabber.m
+//  PRCZimamaGrabber.m
 //  Pricer
 //
 //  Created by Dmytro Omelchuk on 11/6/14.
 //  Copyright 2014 __MyCompanyName__. All rights reserved.
 //
 
-#import "ZimamaGrabber.h"
+#import "PRCZimamaGrabber.h"
 
 
-@implementation ZimamaGrabber
+@implementation PRCZimamaGrabber
 
 + (instancetype)sharedGrabber
 {
-	static ZimamaGrabber *sSharedGrabber = nil;
+	static PRCZimamaGrabber *sSharedGrabber = nil;
     static dispatch_once_t sOnceToken;
 	
     dispatch_once(&sOnceToken,
 	^{
-        sSharedGrabber = [[ZimamaGrabber alloc] init];
+        sSharedGrabber = [[PRCZimamaGrabber alloc] init];
     });
 	
 	return sSharedGrabber;

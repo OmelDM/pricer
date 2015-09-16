@@ -1,13 +1,13 @@
 //
-//  ReimaGrabber.h
+//  PRCCoolkidsGrabber.h
 //  Pricer
 //
 //  Created by Dmytro Omelchuk on 10/6/14.
 //  Copyright 2014 __MyCompanyName__. All rights reserved.
 //
 
-#import "Grabber.h"
+#import "PRCGrabber.h"
 
-@interface ReimaGrabber : Grabber
+@interface PRCCoolkidsGrabber : PRCGrabber
 
 @end

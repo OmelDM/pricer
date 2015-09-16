@@ -1,30 +1,32 @@
 //
-//  Grabber.m
+//  PRCReimaGrabber.m
 //  Pricer
 //
 //  Created by Dmytro Omelchuk on 10/6/14.
 //  Copyright 2014 __MyCompanyName__. All rights reserved.
 //
 
-#import "Grabber.h"
+#import "PRCReimaGrabber.h"
 #import "NSStringExtensions.h"
 
-@interface Grabber ()
-
-@end
-
-@implementation Grabber
+@implementation PRCReimaGrabber
 
 + (instancetype)sharedGrabber
 {
-	[self doesNotRecognizeSelector:_cmd];
-	return nil;
+	static PRCReimaGrabber *sSharedGrabber = nil;
+    static dispatch_once_t sOnceToken;
+	
+    dispatch_once(&sOnceToken,
+	^{
+        sSharedGrabber = [[PRCReimaGrabber alloc] init];
+    });
+	
+	return sSharedGrabber;
 }
 
 - (NSString *)XPathToPrice
 {
-	[self doesNotRecognizeSelector:_cmd];
-	return nil;
+	return @"//span[@class='jsTotal total']";
 }
 
 - (NSNumber *)priceFromURL:(NSURL *)anURL error:(NSError **)anError
@@ -40,6 +42,13 @@
 	
 	NSString *thePriceString = [[[thePage nodesForXPath:self.XPathToPrice
 				error:anError] lastObject] objectValue];
+	
+	if (nil == thePriceString && nil == *anError)
+	{
+		thePriceString = [[[thePage
+					nodesForXPath:@"//span[@class='jsTotal total discount-less']"
+					error:anError] lastObject] objectValue];
+	}
 	
 	return [thePriceString numberValue];
 }
