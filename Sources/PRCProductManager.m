@@ -186,7 +186,7 @@
 	}
 	else
 	{
-		// since we skipped first field 'ID' we should decrease index to get
+		// since we do not use 'ID' field, we should decrease index to get
 		// correct index for orderedShops
 		// |   ID   |   0   |   1   |   2   |  ...  |   n   |
 		aFieldIndex--;
