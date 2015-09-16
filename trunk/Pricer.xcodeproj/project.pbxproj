@@ -1,0 +1,352 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A51C0A419E3023000A7041C /* Grabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C0A319E3023000A7041C /* Grabber.m */; };
+		1A51C0A719E3029700A7041C /* RozetkaGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C0A619E3029700A7041C /* RozetkaGrabber.m */; };
+		1A51C0D419E3056700A7041C /* ReimaGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C0D319E3056700A7041C /* ReimaGrabber.m */; };
+		1A51C0D719E3059E00A7041C /* CoolkidsGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C0D619E3059E00A7041C /* CoolkidsGrabber.m */; };
+		1A51C0EA19E305F700A7041C /* GrabberFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C0E919E305F700A7041C /* GrabberFactory.m */; };
+		1A5991EB1BA83B690044BA3A /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5991EA1BA83B690044BA3A /* CHCSVParser.m */; };
+		1A5991EE1BA849690044BA3A /* PRCProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5991ED1BA849690044BA3A /* PRCProduct.m */; };
+		1A74EA9A19F2EB4E00069C28 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A74EA9919F2EB4E00069C28 /* Item.m */; };
+		1A8019E919E492B3007941CA /* Untitled.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1A8019E819E492B3007941CA /* Untitled.icns */; };
+		1AB3B2971A0BB92300A0EC4F /* ZimamaGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3B2961A0BB92300A0EC4F /* ZimamaGrabber.m */; };
+		1AED427C1BA94E71007DE988 /* PRCProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AED427B1BA94E71007DE988 /* PRCProductManager.m */; };
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		256AC3DA0F4B6AC300CF3369 /* PricerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PricerAppDelegate.m */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = Resources/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1A51C0A219E3023000A7041C /* Grabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Grabber.h; path = Sources/Grabbers/Grabber.h; sourceTree = "<group>"; };
+		1A51C0A319E3023000A7041C /* Grabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Grabber.m; path = Sources/Grabbers/Grabber.m; sourceTree = "<group>"; };
+		1A51C0A519E3029700A7041C /* RozetkaGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RozetkaGrabber.h; path = Sources/Grabbers/RozetkaGrabber.h; sourceTree = "<group>"; };
+		1A51C0A619E3029700A7041C /* RozetkaGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RozetkaGrabber.m; path = Sources/Grabbers/RozetkaGrabber.m; sourceTree = "<group>"; };
+		1A51C0D219E3056700A7041C /* ReimaGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReimaGrabber.h; path = Sources/Grabbers/ReimaGrabber.h; sourceTree = "<group>"; };
+		1A51C0D319E3056700A7041C /* ReimaGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReimaGrabber.m; path = Sources/Grabbers/ReimaGrabber.m; sourceTree = "<group>"; };
+		1A51C0D519E3059E00A7041C /* CoolkidsGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoolkidsGrabber.h; path = Sources/Grabbers/CoolkidsGrabber.h; sourceTree = "<group>"; };
+		1A51C0D619E3059E00A7041C /* CoolkidsGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoolkidsGrabber.m; path = Sources/Grabbers/CoolkidsGrabber.m; sourceTree = "<group>"; };
+		1A51C0E819E305F700A7041C /* GrabberFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrabberFactory.h; path = Sources/Grabbers/GrabberFactory.h; sourceTree = "<group>"; };
+		1A51C0E919E305F700A7041C /* GrabberFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrabberFactory.m; path = Sources/Grabbers/GrabberFactory.m; sourceTree = "<group>"; };
+		1A5991E91BA83B690044BA3A /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHCSVParser.h; path = Sources/CHCSVParser/CHCSVParser.h; sourceTree = "<group>"; };
+		1A5991EA1BA83B690044BA3A /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHCSVParser.m; path = Sources/CHCSVParser/CHCSVParser.m; sourceTree = "<group>"; };
+		1A5991EC1BA849690044BA3A /* PRCProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRCProduct.h; path = Sources/PRCProduct.h; sourceTree = "<group>"; };
+		1A5991ED1BA849690044BA3A /* PRCProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRCProduct.m; path = Sources/PRCProduct.m; sourceTree = "<group>"; };
+		1A74EA9819F2EB4E00069C28 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Sources/Item.h; sourceTree = "<group>"; };
+		1A74EA9919F2EB4E00069C28 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Sources/Item.m; sourceTree = "<group>"; };
+		1A8019E819E492B3007941CA /* Untitled.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Untitled.icns; path = Resources/Untitled.icns; sourceTree = "<group>"; };
+		1AB3B2951A0BB92300A0EC4F /* ZimamaGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZimamaGrabber.h; path = Sources/Grabbers/ZimamaGrabber.h; sourceTree = "<group>"; };
+		1AB3B2961A0BB92300A0EC4F /* ZimamaGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZimamaGrabber.m; path = Sources/Grabbers/ZimamaGrabber.m; sourceTree = "<group>"; };
+		1AED427A1BA94E71007DE988 /* PRCProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRCProductManager.h; path = Sources/PRCProductManager.h; sourceTree = "<group>"; };
+		1AED427B1BA94E71007DE988 /* PRCProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRCProductManager.m; path = Sources/PRCProductManager.m; sourceTree = "<group>"; };
+		1DDD58150DA1D0A300B32029 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainMenu.xib; path = Resources/English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		256AC3D80F4B6AC300CF3369 /* PricerAppDelegate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PricerAppDelegate.h; path = Sources/PricerAppDelegate.h; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* PricerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PricerAppDelegate.m; path = Sources/PricerAppDelegate.m; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* Pricer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pricer_Prefix.pch; path = Sources/Pricer_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Sources/main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* Pricer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pricer-Info.plist"; path = "Resources/Pricer-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Pricer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pricer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1A5991E81BA83B470044BA3A /* CHCSVParser */,
+				1A5991E71BA836380044BA3A /* Grabbers */,
+				256AC3D80F4B6AC300CF3369 /* PricerAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* PricerAppDelegate.m */,
+				256AC3F00F4B6AF500CF3369 /* Pricer_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				1A74EA9819F2EB4E00069C28 /* Item.h */,
+				1A74EA9919F2EB4E00069C28 /* Item.m */,
+				1A5991EC1BA849690044BA3A /* PRCProduct.h */,
+				1A5991ED1BA849690044BA3A /* PRCProduct.m */,
+				1AED427A1BA94E71007DE988 /* PRCProductManager.h */,
+				1AED427B1BA94E71007DE988 /* PRCProductManager.m */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Pricer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A5991E71BA836380044BA3A /* Grabbers */ = {
+			isa = PBXGroup;
+			children = (
+				1A51C0E819E305F700A7041C /* GrabberFactory.h */,
+				1A51C0E919E305F700A7041C /* GrabberFactory.m */,
+				1A51C0A219E3023000A7041C /* Grabber.h */,
+				1A51C0A319E3023000A7041C /* Grabber.m */,
+				1A51C0A519E3029700A7041C /* RozetkaGrabber.h */,
+				1A51C0A619E3029700A7041C /* RozetkaGrabber.m */,
+				1A51C0D219E3056700A7041C /* ReimaGrabber.h */,
+				1A51C0D319E3056700A7041C /* ReimaGrabber.m */,
+				1A51C0D519E3059E00A7041C /* CoolkidsGrabber.h */,
+				1A51C0D619E3059E00A7041C /* CoolkidsGrabber.m */,
+				1AB3B2951A0BB92300A0EC4F /* ZimamaGrabber.h */,
+				1AB3B2961A0BB92300A0EC4F /* ZimamaGrabber.m */,
+			);
+			name = Grabbers;
+			sourceTree = "<group>";
+		};
+		1A5991E81BA83B470044BA3A /* CHCSVParser */ = {
+			isa = PBXGroup;
+			children = (
+				1A5991E91BA83B690044BA3A /* CHCSVParser.h */,
+				1A5991EA1BA83B690044BA3A /* CHCSVParser.m */,
+			);
+			name = CHCSVParser;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Pricer */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = Pricer;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A8019E819E492B3007941CA /* Untitled.icns */,
+				8D1107310486CEB800E47090 /* Pricer-Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Pricer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Pricer" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pricer;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Pricer;
+			productReference = 8D1107320486CEB800E47090 /* Pricer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Pricer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Pricer */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Pricer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				1A8019E919E492B3007941CA /* Untitled.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				256AC3DA0F4B6AC300CF3369 /* PricerAppDelegate.m in Sources */,
+				1A51C0A419E3023000A7041C /* Grabber.m in Sources */,
+				1AED427C1BA94E71007DE988 /* PRCProductManager.m in Sources */,
+				1A51C0A719E3029700A7041C /* RozetkaGrabber.m in Sources */,
+				1A51C0D419E3056700A7041C /* ReimaGrabber.m in Sources */,
+				1A51C0D719E3059E00A7041C /* CoolkidsGrabber.m in Sources */,
+				1A5991EE1BA849690044BA3A /* PRCProduct.m in Sources */,
+				1A51C0EA19E305F700A7041C /* GrabberFactory.m in Sources */,
+				1A74EA9A19F2EB4E00069C28 /* Item.m in Sources */,
+				1A5991EB1BA83B690044BA3A /* CHCSVParser.m in Sources */,
+				1AB3B2971A0BB92300A0EC4F /* ZimamaGrabber.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* InfoPlist.strings */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* MainMenu.xib */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Sources/Pricer_Prefix.pch;
+				INFOPLIST_FILE = "Resources/Pricer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Pricer;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Sources/Pricer_Prefix.pch;
+				INFOPLIST_FILE = "Resources/Pricer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Pricer;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.9;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PREBINDING = NO;
+				SDKROOT = macosx10.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Pricer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Pricer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
