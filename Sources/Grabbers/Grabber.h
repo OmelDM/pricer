@@ -6,27 +6,12 @@
 //  Copyright 2014 __MyCompanyName__. All rights reserved.
 //
 
-@class Grabber;
-
-@protocol GrabberDelegate <NSObject>
-
-- (void)grabber:(Grabber *)aGrabber didFinishGrabbingInfo:(NSDictionary *)anInfo;
-
-@end
-
 @interface Grabber : NSObject
-{
-	@private
-//		NSURL *link;
-//		id delegate;
-}
 
-@property (nonatomic, assign) id delegate;
-@property (strong, readonly) NSURL *link;
++ (instancetype)sharedGrabber;
 
-- (id)initWithLink:(NSURL *)aLink;
+@property (nonatomic, readonly) NSString *XPathToPrice;
 
-- (NSDictionary *)info;
-- (void)grab;
+- (NSNumber *)priceFromURL:(NSURL *)anURL error:(NSError **)anError;
 
 @end

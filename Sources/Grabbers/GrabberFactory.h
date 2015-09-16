@@ -9,10 +9,7 @@
 @class Grabber;
 
 @interface GrabberFactory : NSObject
-{
 
-}
-
-+ (Grabber *)grabberForLink:(NSURL *)aLink;
++ (Grabber *)grabberForURL:(NSURL *)aURL;
 
 @end

@@ -9,10 +9,5 @@
 #import "Grabber.h"
 
 @interface CoolkidsGrabber : Grabber
-{
-	@private
-		NSMutableDictionary *info;
-}
-
 
 @end

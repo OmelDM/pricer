@@ -9,9 +9,5 @@
 #import "Grabber.h"
 
 @interface ReimaGrabber : Grabber
-{
-	@private
-		NSMutableDictionary *info;
-}
 
 @end

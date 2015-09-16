@@ -11,33 +11,22 @@
 
 @implementation ZimamaGrabber
 
-- (id)initWithLink:(NSURL *)aLink
++ (instancetype)sharedGrabber
 {
-	self = [super initWithLink:aLink];
-	if (nil != self)
-	{
-		info = [NSMutableDictionary new];
-	}
-	return self;
+	static ZimamaGrabber *sSharedGrabber = nil;
+    static dispatch_once_t sOnceToken;
+	
+    dispatch_once(&sOnceToken,
+	^{
+        sSharedGrabber = [[ZimamaGrabber alloc] init];
+    });
+	
+	return sSharedGrabber;
 }
 
-//- (void)dealloc
-//{
-//	[info release];
-//	[super dealloc];
-//}
-//
-//- (NSDictionary *)info
-//{
-//	NSError *theError = nil;
-//	NSXMLDocument *thePage = [[[NSXMLDocument alloc] initWithContentsOfURL:[self link]
-//				options:NSXMLDocumentTidyHTML error:&theError] autorelease];
-//	theError = nil;
-//	NSNumber *thePrice = [[[thePage nodesForXPath:@"//h3[@id='our_price_display']"
-//				error:&theError] lastObject] objectValue];			
-//	
-//	return [NSDictionary dictionaryWithObjectsAndKeys:[NSDictionary
-//				dictionaryWithObject:thePrice forKey:@"price"], @"zimamaColumn", nil];
-//}
+- (NSString *)XPathToPrice
+{
+	return @"//h3[@id='our_price_display']";
+}
 
 @end

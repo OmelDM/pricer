@@ -7,37 +7,50 @@
 //
 
 #import "ReimaGrabber.h"
-
+#import "NSStringExtensions.h"
 
 @implementation ReimaGrabber
 
-- (id)initWithLink:(NSURL *)aLink
++ (instancetype)sharedGrabber
 {
-	self = [super initWithLink:aLink];
-	if (nil != self)
-	{
-		info = [NSMutableDictionary new];
-	}
-	return self;
+	static ReimaGrabber *sSharedGrabber = nil;
+    static dispatch_once_t sOnceToken;
+	
+    dispatch_once(&sOnceToken,
+	^{
+        sSharedGrabber = [[ReimaGrabber alloc] init];
+    });
+	
+	return sSharedGrabber;
 }
 
-//- (void)dealloc
-//{
-//	[info release];
-//	[super dealloc];
-//}
+- (NSString *)XPathToPrice
+{
+	return @"//span[@class='jsTotal total']";
+}
 
-//- (NSDictionary *)info
-//{
-//	NSError *theError = nil;
-//	NSXMLDocument *thePage = [[[NSXMLDocument alloc] initWithContentsOfURL:[self link]
-//				options:NSXMLDocumentTidyHTML error:&theError] autorelease];
-//	theError = nil;
-//	NSNumber *thePrice = [[[thePage nodesForXPath:@"//span[@class='jsTotal total']"
-//				error:&theError] lastObject] objectValue];			
-//	
-//	return [NSDictionary dictionaryWithObjectsAndKeys:[NSDictionary
-//				dictionaryWithObject:thePrice forKey:@"price"], @"reimaColumn", nil];
-//}
+- (NSNumber *)priceFromURL:(NSURL *)anURL error:(NSError **)anError
+{
+	NSXMLDocument *thePage = [[NSXMLDocument alloc] initWithContentsOfURL:anURL
+				options:NSXMLDocumentTidyHTML error:anError];
+	
+	if (nil == thePage)
+	{
+		NSLog(@"HTML parse error: %@, [%@]", [*anError localizedDescription],
+					anURL);
+	}
+	
+	NSString *thePriceString = [[[thePage nodesForXPath:self.XPathToPrice
+				error:anError] lastObject] objectValue];
+	
+	if (nil == thePriceString && nil == *anError)
+	{
+		thePriceString = [[[thePage
+					nodesForXPath:@"//span[@class='jsTotal total discount-less']"
+					error:anError] lastObject] objectValue];
+	}
+	
+	return [thePriceString numberValue];
+}
 
 @end

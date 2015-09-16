@@ -16,29 +16,30 @@
 
 @implementation GrabberFactory
 
-//+ (Grabber *)grabberForLink:(NSURL *)aLink
-//{
-//	NSString *theHost = [aLink host];
-//	Grabber *theResult = nil;
-//	if ([theHost isEqualToString:@"rozetka.ua"] || [theHost
-//				isEqualToString:@"rozetka.com.ua"])
-//	{
-//		theResult = [[RozetkaGrabber alloc] initWithLink:aLink];
-//	}
-//	else if ([theHost isEqualToString:@"reima.in.ua"])
-//	{
-//		theResult = [[ReimaGrabber alloc] initWithLink:aLink];
-//	}
-//	else if ([theHost isEqualToString:@"coolkids.com.ua"])
-//	{
-//		theResult = [[CoolkidsGrabber alloc] initWithLink:aLink];
-//	}
-//	else if ([theHost isEqualToString:@"zimama.com.ua"])
-//	{
-//		theResult = [[ZimamaGrabber alloc] initWithLink:aLink];
-//	}
-//	
-//	return [theResult autorelease];
-//}
++ (Grabber *)grabberForURL:(NSURL *)aURL
+{
+	NSString *theHost = [aURL host];
+	Grabber *theResult = nil;
+	
+	if ([theHost isEqualToString:@"rozetka.ua"] || [theHost
+				isEqualToString:@"rozetka.com.ua"])
+	{
+		theResult = [RozetkaGrabber sharedGrabber];
+	}
+	else if ([theHost isEqualToString:@"reima.in.ua"])
+	{
+		theResult = [ReimaGrabber sharedGrabber];
+	}
+	else if ([theHost isEqualToString:@"coolkids.com.ua"])
+	{
+		theResult = [CoolkidsGrabber sharedGrabber];
+	}
+	else if ([theHost isEqualToString:@"zimama.com.ua"])
+	{
+		theResult = [ZimamaGrabber sharedGrabber];
+	}
+	
+	return theResult;
+}
 
 @end

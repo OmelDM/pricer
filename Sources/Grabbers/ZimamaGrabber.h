@@ -9,10 +9,5 @@
 #import "Grabber.h"
 
 @interface ZimamaGrabber : Grabber
-{
-	@private
-		NSMutableDictionary *info;
-}
-
 
 @end

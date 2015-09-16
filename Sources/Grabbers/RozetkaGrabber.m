@@ -15,33 +15,22 @@
 
 @implementation RozetkaGrabber
 
-- (id)initWithLink:(NSURL *)aLink
++ (instancetype)sharedGrabber
 {
-	self = [super initWithLink:aLink];
-	if (nil != self)
-	{
-		info = [NSMutableDictionary new];
-	}
-	return self;
+	static RozetkaGrabber *sSharedGrabber = nil;
+    static dispatch_once_t sOnceToken;
+	
+    dispatch_once(&sOnceToken,
+	^{
+        sSharedGrabber = [[RozetkaGrabber alloc] init];
+    });
+	
+	return sSharedGrabber;
 }
 
-- (void)dealloc
+- (NSString *)XPathToPrice
 {
-//	[info release];
-//	[super dealloc];
-}
-
-- (NSDictionary *)info
-{
-//	NSError *theError = nil;
-//	NSXMLDocument *thePage = [[[NSXMLDocument alloc] initWithContentsOfURL:[self link]
-//				options:NSXMLDocumentTidyHTML error:&theError] autorelease];
-//	theError = nil;
-//	NSNumber *thePrice = [[[thePage nodesForXPath:@"//span[@itemprop='price']"
-//				error:&theError] lastObject] objectValue];			
-//	
-//	return [NSDictionary dictionaryWithObjectsAndKeys:[NSDictionary
-//				dictionaryWithObject:thePrice forKey:@"price"], @"rozetkaColumn", nil];
+	return @"//span[@itemprop='price']";
 }
 
 @end

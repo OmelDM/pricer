@@ -8,6 +8,8 @@
 
 #import "PRCProductManager.h"
 #import "PRCProduct.h"
+#import "Grabber.h"
+#import "GrabberFactory.h"
 
 @interface PRCProductManager ()
 
@@ -66,7 +68,27 @@
 
 - (void)retrievePrices
 {
-
+	for (PRCProduct *theProduct in self.products)
+	{
+		for (NSString *theShop in self.orderedShops)
+		{
+			NSURL *theURL = [theProduct URLOnSite:theShop];
+			Grabber *theGrabber = [GrabberFactory grabberForURL:theURL];
+			NSError *theError = nil;
+			NSNumber *thePrice = [theGrabber priceFromURL:theURL
+						error:&theError];
+			
+			if (nil == thePrice)
+			{
+				NSLog(@"Error: could not grab price from '%@', error: %@",
+							theURL, [theError localizedDescription]);
+			}
+			else
+			{
+				[theProduct setPrice:thePrice forSite:theShop];
+			}
+		}
+	}
 }
 
 - (void)storePricesToCSVFile

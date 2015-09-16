@@ -14,10 +14,10 @@
 		1A51C0EA19E305F700A7041C /* GrabberFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C0E919E305F700A7041C /* GrabberFactory.m */; };
 		1A5991EB1BA83B690044BA3A /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5991EA1BA83B690044BA3A /* CHCSVParser.m */; };
 		1A5991EE1BA849690044BA3A /* PRCProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5991ED1BA849690044BA3A /* PRCProduct.m */; };
-		1A74EA9A19F2EB4E00069C28 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A74EA9919F2EB4E00069C28 /* Item.m */; };
 		1A8019E919E492B3007941CA /* Untitled.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1A8019E819E492B3007941CA /* Untitled.icns */; };
 		1AB3B2971A0BB92300A0EC4F /* ZimamaGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3B2961A0BB92300A0EC4F /* ZimamaGrabber.m */; };
 		1AED427C1BA94E71007DE988 /* PRCProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AED427B1BA94E71007DE988 /* PRCProductManager.m */; };
+		1AED427F1BA994F8007DE988 /* NSStringExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AED427E1BA994F8007DE988 /* NSStringExtensions.m */; };
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* PricerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PricerAppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -43,13 +43,13 @@
 		1A5991EA1BA83B690044BA3A /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHCSVParser.m; path = Sources/CHCSVParser/CHCSVParser.m; sourceTree = "<group>"; };
 		1A5991EC1BA849690044BA3A /* PRCProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRCProduct.h; path = Sources/PRCProduct.h; sourceTree = "<group>"; };
 		1A5991ED1BA849690044BA3A /* PRCProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRCProduct.m; path = Sources/PRCProduct.m; sourceTree = "<group>"; };
-		1A74EA9819F2EB4E00069C28 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Sources/Item.h; sourceTree = "<group>"; };
-		1A74EA9919F2EB4E00069C28 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Sources/Item.m; sourceTree = "<group>"; };
 		1A8019E819E492B3007941CA /* Untitled.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Untitled.icns; path = Resources/Untitled.icns; sourceTree = "<group>"; };
 		1AB3B2951A0BB92300A0EC4F /* ZimamaGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZimamaGrabber.h; path = Sources/Grabbers/ZimamaGrabber.h; sourceTree = "<group>"; };
 		1AB3B2961A0BB92300A0EC4F /* ZimamaGrabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZimamaGrabber.m; path = Sources/Grabbers/ZimamaGrabber.m; sourceTree = "<group>"; };
 		1AED427A1BA94E71007DE988 /* PRCProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRCProductManager.h; path = Sources/PRCProductManager.h; sourceTree = "<group>"; };
 		1AED427B1BA94E71007DE988 /* PRCProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRCProductManager.m; path = Sources/PRCProductManager.m; sourceTree = "<group>"; };
+		1AED427D1BA994F8007DE988 /* NSStringExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringExtensions.h; path = Sources/NSStringExtensions.h; sourceTree = "<group>"; };
+		1AED427E1BA994F8007DE988 /* NSStringExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringExtensions.m; path = Sources/NSStringExtensions.m; sourceTree = "<group>"; };
 		1DDD58150DA1D0A300B32029 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainMenu.xib; path = Resources/English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* PricerAppDelegate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PricerAppDelegate.h; path = Sources/PricerAppDelegate.h; sourceTree = "<group>"; };
 		256AC3D90F4B6AC300CF3369 /* PricerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PricerAppDelegate.m; path = Sources/PricerAppDelegate.m; sourceTree = "<group>"; };
@@ -82,12 +82,12 @@
 				256AC3D90F4B6AC300CF3369 /* PricerAppDelegate.m */,
 				256AC3F00F4B6AF500CF3369 /* Pricer_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
-				1A74EA9819F2EB4E00069C28 /* Item.h */,
-				1A74EA9919F2EB4E00069C28 /* Item.m */,
 				1A5991EC1BA849690044BA3A /* PRCProduct.h */,
 				1A5991ED1BA849690044BA3A /* PRCProduct.m */,
 				1AED427A1BA94E71007DE988 /* PRCProductManager.h */,
 				1AED427B1BA94E71007DE988 /* PRCProductManager.m */,
+				1AED427D1BA994F8007DE988 /* NSStringExtensions.h */,
+				1AED427E1BA994F8007DE988 /* NSStringExtensions.m */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -230,13 +230,13 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* PricerAppDelegate.m in Sources */,
 				1A51C0A419E3023000A7041C /* Grabber.m in Sources */,
+				1AED427F1BA994F8007DE988 /* NSStringExtensions.m in Sources */,
 				1AED427C1BA94E71007DE988 /* PRCProductManager.m in Sources */,
 				1A51C0A719E3029700A7041C /* RozetkaGrabber.m in Sources */,
 				1A51C0D419E3056700A7041C /* ReimaGrabber.m in Sources */,
 				1A51C0D719E3059E00A7041C /* CoolkidsGrabber.m in Sources */,
 				1A5991EE1BA849690044BA3A /* PRCProduct.m in Sources */,
 				1A51C0EA19E305F700A7041C /* GrabberFactory.m in Sources */,
-				1A74EA9A19F2EB4E00069C28 /* Item.m in Sources */,
 				1A5991EB1BA83B690044BA3A /* CHCSVParser.m in Sources */,
 				1AB3B2971A0BB92300A0EC4F /* ZimamaGrabber.m in Sources */,
 			);

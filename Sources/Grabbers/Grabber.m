@@ -7,39 +7,41 @@
 //
 
 #import "Grabber.h"
+#import "NSStringExtensions.h"
 
 @interface Grabber ()
-
-@property (strong) NSURL *link;
 
 @end
 
 @implementation Grabber
 
-@synthesize delegate;
-
-- (id)initWithLink:(NSURL *)aLink
-{
-	self = [super init];
-	if (nil != self)
-	{
-		self.link = aLink;
-	}
-	return self;
-}
-
-- (NSDictionary *)info
++ (instancetype)sharedGrabber
 {
 	[self doesNotRecognizeSelector:_cmd];
 	return nil;
 }
 
-- (void)grab
+- (NSString *)XPathToPrice
 {
-	if ([self.delegate respondsToSelector:@selector(grabber:didFinishGrabbingInfo:)])
+	[self doesNotRecognizeSelector:_cmd];
+	return nil;
+}
+
+- (NSNumber *)priceFromURL:(NSURL *)anURL error:(NSError **)anError
+{
+	NSXMLDocument *thePage = [[NSXMLDocument alloc] initWithContentsOfURL:anURL
+				options:NSXMLDocumentTidyHTML error:anError];
+	
+	if (nil == thePage)
 	{
-		[self.delegate grabber:self didFinishGrabbingInfo:[self info]];
+		NSLog(@"HTML parse error: %@, [%@]", [*anError localizedDescription],
+					anURL);
 	}
+	
+	NSString *thePriceString = [[[thePage nodesForXPath:self.XPathToPrice
+				error:anError] lastObject] objectValue];
+	
+	return [thePriceString numberValue];
 }
 
 @end

@@ -9,9 +9,5 @@
 #import "Grabber.h"
 
 @interface RozetkaGrabber : Grabber
-{
-	@private
-		NSMutableDictionary *info;
-}
 
 @end

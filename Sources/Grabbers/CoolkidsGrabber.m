@@ -10,33 +10,22 @@
 
 @implementation CoolkidsGrabber
 
-- (id)initWithLink:(NSURL *)aLink
++ (instancetype)sharedGrabber
 {
-	self = [super initWithLink:aLink];
-	if (nil != self)
-	{
-		info = [NSMutableDictionary new];
-	}
-	return self;
+	static CoolkidsGrabber *sSharedGrabber = nil;
+    static dispatch_once_t sOnceToken;
+	
+    dispatch_once(&sOnceToken,
+	^{
+        sSharedGrabber = [[CoolkidsGrabber alloc] init];
+    });
+	
+	return sSharedGrabber;
 }
 
-//- (void)dealloc
-//{
-//	[info release];
-//	[super dealloc];
-//}
-//
-//- (NSDictionary *)info
-//{
-//	NSError *theError = nil;
-//	NSXMLDocument *thePage = [[[NSXMLDocument alloc] initWithContentsOfURL:[self link]
-//				options:NSXMLDocumentTidyHTML error:&theError] autorelease];
-//	theError = nil;
-//	NSNumber *thePrice = [[[thePage nodesForXPath:@"//div[@class='product_price']"
-//				error:&theError] lastObject] objectValue];			
-//	
-//	return [NSDictionary dictionaryWithObjectsAndKeys:[NSDictionary
-//				dictionaryWithObject:thePrice forKey:@"price"], @"coolkidsColumn", nil];
-//}
+- (NSString *)XPathToPrice
+{
+	return @"//div[@class='product_price']";
+}
 
 @end
