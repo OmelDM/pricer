@@ -11,7 +11,7 @@
 
 @interface PRCProductManager ()
 
-@property (nonatomic, strong) NSMutableDictionary *shopsOrder;
+@property (nonatomic, strong) NSMutableArray *orderedShops;
 @property (nonatomic, assign) BOOL firstLineParsed;
 @property (nonatomic, strong) PRCProduct *currentProduct;
 
@@ -55,8 +55,6 @@
 	theParser.delegate = self;
 	theParser.trimsWhitespace = YES;
 	[theParser parse];
-
-//	self.products = [NSMutableArray arrayWithObjects:[PRCProduct new], [PRCProduct new], [PRCProduct new], nil];
 }
 
 - (void)retrievePrices
@@ -66,15 +64,29 @@
 
 - (void)storePricesToCSVFile
 {
-	CHCSVWriter *theWriter = [[CHCSVWriter alloc] initForWritingToCSVFile:@"/Users/omel/Documents/Projects/Pricer/Out.csv"];
+	CHCSVWriter *theWriter = [[CHCSVWriter alloc]
+				initForWritingToCSVFile:self.outputCSVFilePath];
+	
+	if (nil == theWriter)
+	{
+		NSLog(@"Fatal error: could not create csv writer");
+		return;
+	}
+	
 	[theWriter writeField:@"ID"];
-	[theWriter writeField:@"reima.in.ua"];
+	for (NSString *theShop in self.orderedShops)
+	{
+		[theWriter writeField:theShop];
+	}
 	[theWriter finishLine];
 	
 	for (PRCProduct *theProduct in self.products)
 	{
 		[theWriter writeField:theProduct.ID];
-		[theWriter writeField:[theProduct priceOnSite:@"reima.in.ua"]];
+		for (NSString *theShop in self.orderedShops)
+		{
+			[theWriter writeField:[theProduct priceOnSite:theShop]];
+		}
 		[theWriter finishLine];
 	}
 	
@@ -99,7 +111,7 @@
 	if (1 == aRecordNumber)
 	{
 		self.firstLineParsed = NO;
-		self.shopsOrder = [NSMutableDictionary new];
+		self.orderedShops = [NSMutableArray new];
 	}
 	else
 	{
@@ -119,11 +131,18 @@
 	}
 }
 
-- (void)parser:(CHCSVParser *)aParser didReadField:(NSString *)aField atIndex:(NSInteger)aFieldIndex
+- (void)parser:(CHCSVParser *)aParser didReadField:(NSString *)aField
+			atIndex:(NSInteger)aFieldIndex
 {
 	if (!self.firstLineParsed)
 	{
-		[self.shopsOrder setObject:aField forKey:[NSNumber numberWithInteger:aFieldIndex]];
+		if (0 == aFieldIndex)
+		{
+			// just skip 'ID' field
+			return;
+		}
+		
+		[self.orderedShops addObject:aField];
 	}
 	else if (0 == aFieldIndex)
 	{
@@ -131,7 +150,19 @@
 	}
 	else
 	{
-		NSString *theShop = [self.shopsOrder objectForKey:[NSNumber numberWithInteger:aFieldIndex]];
+		// since we skipped first field 'ID' we should decrease index to get
+		// correct index for orderedShops
+		// |   ID   |   0   |   1   |   2   |  ...  |   n   |
+		aFieldIndex--;
+		
+		if (self.orderedShops.count <= aFieldIndex)
+		{
+			NSLog(@"Parse error: feild '%@' [%ld] is beyond of the array of shops",
+						aField, (long)aFieldIndex);
+			return;
+		}
+		
+		NSString *theShop = [self.orderedShops objectAtIndex:aFieldIndex];
 		NSURL *theURL = [NSURL URLWithString:aField];
 		
 		if (nil == theURL)

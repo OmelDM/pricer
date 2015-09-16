@@ -1343,7 +1343,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="979818776">
 								<int key="NSCellFlags">-1804599231</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents"/>
+								<string key="NSContents">/Users/omel/Documents/Projects/Pricer/Links.csv</string>
 								<object class="NSFont" key="NSSupport" id="975286132">
 									<bool key="IBIsSystemFont">YES</bool>
 									<double key="NSSize">13</double>
@@ -1386,7 +1386,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="375319107">
 								<int key="NSCellFlags">-1804599231</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents"/>
+								<string key="NSContents">/Users/omel/Documents/Projects/Pricer/Out.csv</string>
 								<reference key="NSSupport" ref="975286132"/>
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="381048352"/>
@@ -1403,6 +1403,7 @@
 							<string key="NSFrame">{{205, 160}, {70, 32}}</string>
 							<reference key="NSSuperview" ref="755478698"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="1001729778">
@@ -3449,28 +3450,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">PricerAppDelegate</string>
 					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">refresh:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">refresh:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">refresh:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">infoView</string>
-						<string key="NS.object.0">NSTableView</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">infoView</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">infoView</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">../Sources/PricerAppDelegate.h</string>
@@ -3478,20 +3457,17 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">PricerAppDelegate</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="refresh:">id</string>
-						<string key="startAction:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="refresh:">
-							<string key="name">refresh:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="startAction:">
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">startAction:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">startAction:</string>
+						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">startAction:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</dictionary>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="inTextField">NSTextField</string>
 						<string key="outTextField">NSTextField</string>

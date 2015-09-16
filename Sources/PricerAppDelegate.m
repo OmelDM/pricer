@@ -39,6 +39,7 @@ NSString *const kZimamaColumnIdentifier = @"zimamaColumn";
 
 	PRCProductManager *theProductManager = [PRCProductManager new];
 	theProductManager.inputCSVFilePath = [self.inTextField stringValue];
+	theProductManager.outputCSVFilePath = [self.outTextField stringValue];
 	
 	if ([theProductManager isInputCSVFileVerified])
 	{
