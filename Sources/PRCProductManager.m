@@ -52,6 +52,13 @@
 	CHCSVParser *theParser = [[CHCSVParser alloc]
 				initWithContentsOfCSVURL:[NSURL
 				fileURLWithPath:self.inputCSVFilePath isDirectory:NO]];
+	
+	if (nil == theParser)
+	{
+		NSLog(@"Fatal error: could not create csv parser");
+		return;
+	}
+	
 	theParser.delegate = self;
 	theParser.trimsWhitespace = YES;
 	[theParser parse];
@@ -103,7 +110,7 @@
 
 - (void)parserDidEndDocument:(CHCSVParser *)aParser
 {
-
+	self.currentProduct = nil;
 }
 
 - (void)parser:(CHCSVParser *)aParser didBeginLine:(NSUInteger)aRecordNumber
@@ -127,7 +134,14 @@
 	}
 	else
 	{
-		[self.products addObject:self.currentProduct];
+		if (nil == self.currentProduct)
+		{
+			NSLog(@"Parse error: product on line %ld is absent", aRecordNumber);
+		}
+		else
+		{
+			[self.products addObject:self.currentProduct];
+		}
 	}
 }
 
